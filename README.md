@@ -54,11 +54,14 @@ It will be challenging to complete this app by the end of the program however, I
 
 ### 2. Screen Archetypes
 
+- [ ] Home Screen
+* Welcome scene
 - [ ] Login Screen
 * User can login
 - [ ] Registration Screen
 * User can create a new account
-* User can add their preferences
+- [ ] Profile Screen
+* User can add/update their preferences
 - [ ] Stream
 * User can view a destination with a few lines of descriptions (flight price from current location, main activities, size of city, overall popularity)
 * User can swipe left or right
@@ -73,9 +76,13 @@ It will be challenging to complete this app by the end of the program however, I
 
 * Home Feed
 * Favorites
+* Profile
+=> Edit user preferences
 
 **Flow Navigation** (Screen to Screen)
 
+- [ ] Home Screen
+* => Prompt the user to either log in or sign up
 - [ ] Login Screen
 * => Home
 - [ ] Registration Screen
@@ -84,3 +91,9 @@ It will be challenging to complete this app by the end of the program however, I
 * Destination profile
 - [ ] Favorites Screen
 * => Destination profile
+
+## Wireframes
+
+[Add picture of your hand sketched wireframes in this section]
+![IMG_5267](https://github.com/user-attachments/assets/2d6e3f05-f86c-47bb-904b-7dda6894cab8)
+
