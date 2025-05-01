@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>-.Travinder</string>
+
+    <key>GIDClientID</key>
+    <string>276237731462-k0q4p84nkhph98rutcl0evl4o391thqg.apps.googleusercontent.com</string>
+
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>com.travinder.login</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.276237731462-k0q4p84nkhph98rutcl0evl4o391thqg</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>

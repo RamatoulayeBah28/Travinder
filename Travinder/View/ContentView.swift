@@ -12,19 +12,27 @@ struct ContentView: View {
     @StateObject private var appState = AppState()
 
     var body: some View {
-        VStack {
-            Spacer()
-            Group {
-                switch selectedTab {
-                case .main:
-                    MainScreenView()
-                case .profile:
-                    ProfileView()
-                case .matches:
-                    FavoritesView()
+        Group {
+            if !appState.isLoggedIn {
+                LoginScreen()
+            } else if !appState.hasCompletedSignup {
+                SignUpView()
+            } else {
+                VStack {
+                    Spacer()
+                    Group {
+                        switch selectedTab {
+                        case .main:
+                            MainScreenView()
+                        case .profile:
+                            ProfileView()
+                        case .matches:
+                            FavoritesView()
+                        }
+                    }
+                    FooterView(selectedTab: $selectedTab)
                 }
             }
-            FooterView(selectedTab: $selectedTab)
         }
         .environmentObject(appState)
     }

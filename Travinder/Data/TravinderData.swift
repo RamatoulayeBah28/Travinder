@@ -11,26 +11,32 @@ var travinderData: [Destination] = [
     Destination(
         place: "Paris",
         country: "France",
-        image: "photo-paris-france"
+        image: "photo-paris-france",
+        description: "Romantic streets, world-class art, and the Eiffel Tower — Paris always charms."
     ),
     Destination(
         place: "New York",
         country: "USA",
-        image: "photo-newyork-usa"
+        image: "photo-newyork-usa",
+        description: "The city that never sleeps, with iconic landmarks and endless energy."
+        
     ),
     Destination(
         place: "Athens",
         country: "Greece",
-        image: "photo-athens-greece"
+        image: "photo-athens-greece",
+        description: "Where ancient ruins meet vibrant city life under the Mediterranean sun."
     ),
     Destination(
         place: "Rio de Janeiro",
         country: "Brazil",
-        image: "photo-riodejaneiro-brazil"
+        image: "photo-riodejaneiro-brazil",
+        description: "Samba, sunshine, and stunning views from Christ the Redeemer."
     ),
     Destination(
         place: "Madrid",
         country: "Spain",
-        image: "photo-madrid-spain"
+        image: "photo-madrid-spain",
+        description: "A lively capital full of tapas, plazas, and rich Spanish culture."
     ),
 ]

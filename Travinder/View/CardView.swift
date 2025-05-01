@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CardView: View, Identifiable {
-    // MARK: - PROPERTIES
+    // MARK: - PROPERTIES: 
     let id = UUID()
     var travinder: Destination
+    var onMoreTapped: (() -> Void)? = nil
     
     var body: some View {
         Image(travinder.image).resizable().cornerRadius(24).scaledToFit().frame(minWidth:0, maxWidth: .infinity)
@@ -32,6 +33,7 @@ struct CardView: View, Identifiable {
                     Spacer()
                     Button(action: {
                         // ACTION
+                        onMoreTapped?()
                         print("Success")
                         
                     }) {
@@ -39,9 +41,9 @@ struct CardView: View, Identifiable {
                             .font(.system(.subheadline, design: .rounded)).fontWeight(.heavy)
                             .padding(.horizontal, 20)
                             .padding(.vertical, 12)
-                            .accentColor(Color.blue)
+                            .accentColor(Color.white)
                             .background(
-                                Capsule().stroke(Color.blue, lineWidth: 2)
+                                Capsule().fill(Color.blue)
                             )
                     }
                     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct MainScreenView: View {
     
@@ -13,18 +14,30 @@ struct MainScreenView: View {
     private var dragAreaThreshold: CGFloat = 65.0
     @State private var lastCardIndex: Int = 1
     @EnvironmentObject var appState: AppState
+    @State private var selectedDestination: Destination?
+    @State private var showDetail = false
+    
+    
 
 
     // MARK: - CARD VIEWS
     
-   @State var cardViews: [CardView] = {
+   @State var cardViews: [CardView] = []
+    
+    private func initializeCards() {
         var views = [CardView]()
         for index in 0..<2 {
-            views.append(CardView(travinder: travinderData[index]))
+            let destination = travinderData[index]
+            let card = CardView(travinder: destination, onMoreTapped: {
+                self.selectedDestination = destination
+                self.showDetail = true
+            })
+            views.append(card)
+            
         }
-        return views
-    }()
-    
+        self.cardViews = views
+    }
+      
     // MARK: MOVE THE CARD
     
     private func moveCards() {
@@ -32,7 +45,10 @@ struct MainScreenView: View {
         self.lastCardIndex += 1
         
         let destination = travinderData[lastCardIndex % travinderData.count]
-        let newCardView = CardView(travinder: destination)
+        let newCardView = CardView(travinder: destination, onMoreTapped: {
+            self.selectedDestination = destination
+            self.showDetail = true
+        })
         
         cardViews.append(newCardView)
     }
@@ -137,6 +153,17 @@ struct MainScreenView: View {
             // MARK: - FOOTER
             
         }
+        
+        .onAppear() {
+            initializeCards()
+            
+        }.sheet(isPresented: $showDetail) {
+            if let destination = selectedDestination {
+                DestinationDetailView(destination: destination, matchPercentage: 87)
+            }
+        }
+            
+          
     }
     @ViewBuilder
     private func overlay(for cardview: CardView) -> some View {
